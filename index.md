@@ -1,8 +1,8 @@
 # Privacy Policy
 
 **FlipFlow**
-**Last Updated:** March 17, 2026
-**Effective Date:** March 17, 2026
+**Last Updated:** April 1, 2026
+**Effective Date:** April 1, 2026
 
 ---
 
@@ -36,24 +36,38 @@ The following data is processed and stored **exclusively on your device** and is
 - **Secure counters** -- Daily limit counters are stored locally with HMAC-based tamper protection. The HMAC signing key is stored in the iOS Keychain and never leaves your device.
 - **Encrypted local data** -- Certain sensitive fields stored in UserDefaults are encrypted using ChaChaPoly (256-bit) with a symmetric key stored in the iOS Keychain. Encryption and decryption occur entirely on-device.
 
-### 2.3 Subscription Information
+### 2.3 Product Analytics
+
+To understand onboarding completion, subscription conversion, permission failures, monitoring reliability, and reset-flow performance, we use **Mixpanel**, a third-party product analytics provider.
+
+The analytics data we may send to Mixpanel includes:
+
+- **Pseudonymous app and device metadata** -- Such as an anonymous app instance identifier, app version, build number, iOS version, device model family, and general locale or country derived from device settings.
+- **Subscription and paywall analytics** -- Such as paywall views, selected plan, offering or package identifiers, purchase attempts, restore attempts, trial status, and entitlement status.
+- **Onboarding and feature funnel events** -- Such as onboarding step views and completions, permission request outcomes, app-selection counts, monitoring start outcomes, block trigger reasons, reset flow starts, reset outcomes, and whether skip or discrete reset modes were used.
+- **Coarse product metrics** -- Such as whether onboarding or monitoring has been completed, the count of selected apps or categories, and hydration amount buckets.
+
+We configure our implementation to avoid sending camera recordings, video frames, raw Screen Time activity, exact selected app tokens or names, free-form feedback text, exact reset timestamps, or precise location to Mixpanel.
+
+### 2.4 Subscription Information
 
 Subscription purchases are managed through RevenueCat, a third-party subscription management platform, which communicates with Apple's App Store. RevenueCat receives an anonymous app user identifier to manage your subscription status. RevenueCat does not receive your name, email, or other personal identifiers from the App. RevenueCat's handling of data is governed by [RevenueCat's Privacy Policy](https://www.revenuecat.com/privacy/).
 
 Apple processes all payment transactions. We do not collect, process, or store your payment information, credit card details, or billing address. Apple manages all billing under [Apple's Privacy Policy](https://www.apple.com/legal/privacy/).
 
-### 2.4 Local Notifications
+### 2.5 Local Notifications
 
 The App sends local notifications to your device to inform you about hydration resets, reward milestones, focus achievements, and behavioral improvement reminders. These notifications are generated and delivered entirely on your device. No notification data is sent to any server.
 
-### 2.5 Information We Do Not Collect
+### 2.6 Information We Do Not Collect
 
 - We do **not** collect biometric data or perform facial recognition.
 - We do **not** store, upload, or transmit your camera recordings.
 - We do **not** collect your name, email address, phone number, or precise location through the App (unless you voluntarily provide contact information via feedback).
+- We do **not** send raw Screen Time contents, exact app selections, FamilyControls tokens, or camera data to Mixpanel.
 - We do **not** track you across other apps or websites.
 - We do **not** sell any data to third parties.
-- We do **not** use third-party advertising SDKs or tracking tools.
+- We do **not** use third-party advertising SDKs.
 
 ---
 
@@ -69,9 +83,10 @@ We use the information described above solely to:
 - Send local reward notifications for focus achievements and habit improvements.
 - Personalize your experience based on onboarding preferences.
 - Manage your subscription status through RevenueCat and Apple StoreKit.
+- Analyze onboarding, subscription, permission, monitoring, and reset funnels using limited pseudonymous product analytics through Mixpanel.
 - Improve app performance and fix bugs.
 
-We do not use your data for advertising, user profiling, or any purpose unrelated to the App's functionality.
+We do not use your data for advertising, cross-app tracking, or any purpose unrelated to the App's functionality.
 
 ---
 
@@ -82,6 +97,7 @@ We do not use your data for advertising, user profiling, or any purpose unrelate
 - **Keychain storage** -- Encryption keys and HMAC signing keys are stored securely in the iOS Keychain, protected by the operating system's hardware-backed security.
 - **Encrypted storage** -- Sensitive local data is encrypted using ChaChaPoly with 256-bit keys before being written to UserDefaults.
 - **Camera recordings** -- Processed in real time and discarded immediately after analysis. No recordings are persisted.
+- **Third-party analytics processing** -- Limited pseudonymous product analytics events are transmitted to Mixpanel and processed on Mixpanel's infrastructure rather than only on-device.
 - **No cloud sync** -- Your data is not synced to any cloud service operated by us.
 
 ---
@@ -92,6 +108,7 @@ We do **not** sell, trade, or rent your personal information to third parties.
 
 We may share information only in the following limited circumstances:
 
+- **Mixpanel** -- We share limited pseudonymous product analytics events and device or app metadata with Mixpanel so we can understand onboarding conversion, paywall performance, permission denial recovery, subscription issues, monitoring reliability, and reset flow outcomes. We do not configure Mixpanel to receive camera recordings, raw Screen Time contents, or exact app selections.
 - **RevenueCat** -- An anonymous app user identifier is shared with RevenueCat to manage your subscription status. No personally identifiable information is shared. RevenueCat processes this data under [RevenueCat's Privacy Policy](https://www.revenuecat.com/privacy/).
 - **Apple** -- Subscription billing and payment processing is handled by Apple through the App Store. Apple processes your payment data under its own privacy policy.
 - **Legal requirements** -- If required by applicable law, regulation, court order, or governmental request.
@@ -103,13 +120,14 @@ We may share information only in the following limited circumstances:
 
 The App uses the following services:
 
+- **Mixpanel** -- For pseudonymous product analytics, funnel measurement, and app improvement. Mixpanel receives the limited event and property data described in Section 2.3 and processes it under [Mixpanel's Privacy Policy](https://mixpanel.com/legal/privacy-policy/).
 - **RevenueCat** -- For subscription management, entitlement verification, and offering configuration. RevenueCat receives an anonymous identifier and subscription transaction data. Subject to [RevenueCat's Privacy Policy](https://www.revenuecat.com/privacy/).
 - **Apple StoreKit 2** -- For processing in-app purchases and subscriptions. Subject to [Apple's Privacy Policy](https://www.apple.com/legal/privacy/).
 - **Apple Screen Time API (FamilyControls, DeviceActivity, ManagedSettings)** -- For monitoring and managing app usage. All data remains on-device per Apple's framework design.
 - **Apple Vision Framework** -- For on-device analysis of hydration verification video. No data leaves your device.
 - **Apple CryptoKit** -- For on-device encryption (ChaChaPoly) and HMAC-based integrity verification. All cryptographic operations occur locally.
 
-We do not currently use any third-party analytics, crash reporting, or advertising services. If we introduce such services in the future, we will update this Privacy Policy before collecting any additional data.
+We do not use third-party advertising services. We may add or remove service providers over time, and we will update this Privacy Policy when those changes materially affect data processing.
 
 ---
 
@@ -137,8 +155,8 @@ If you believe someone under 18 is using the App, please contact us at ozdemirtr
 
 ### 9.1 Rights for All Users
 
-- **Access** -- You can view all your data directly within the App (dashboard, insights, settings, statistics).
-- **Deletion** -- You can delete all App data by uninstalling FlipFlow. Since all data is stored locally, uninstallation removes everything. Keychain items may persist after uninstallation; reinstalling and then uninstalling will clear them.
+- **Access** -- You can view most core usage data directly within the App (dashboard, insights, settings, statistics). For analytics data processed through Mixpanel or subscription data processed through RevenueCat, you may also contact us.
+- **Deletion** -- You can delete local App data by uninstalling FlipFlow. Keychain items may persist after uninstallation; reinstalling and then uninstalling will clear them. If you want us to delete analytics data processed through Mixpanel that we control, contact us and we will handle the request subject to our ability to identify the relevant records.
 - **Revoke permissions** -- You can revoke Camera, Screen Time, or Notification permissions at any time through your device's Settings.
 
 ### 9.2 European Economic Area -- GDPR
@@ -153,11 +171,11 @@ If you are in the European Economic Area (EEA) or the United Kingdom, you have t
 - **Right to object** (Article 21).
 - **Right to withdraw consent** at any time without affecting the lawfulness of prior processing.
 
-**Legal basis for processing:** Your consent (Article 6(1)(a) GDPR), which you provide by granting Camera and Screen Time permissions, and the performance of a contract (Article 6(1)(b) GDPR) when you use the App's services.
+**Legal basis for processing:** Your consent (Article 6(1)(a) GDPR), which you provide by granting Camera and Screen Time permissions where applicable, our legitimate interests (Article 6(1)(f)) in measuring onboarding, subscription, reliability, and feature performance through limited pseudonymous analytics, and the performance of a contract (Article 6(1)(b)) when you use the App's services.
 
 **Data controller:** Mehmet Nuri Ozdemir, Germany. Contact: ozdemirtradesolutions@gmail.com
 
-Since all data is stored locally on your device, you can exercise your right to erasure by uninstalling the App or revoking permissions.
+Most core behavioral data is stored locally on your device. Limited pseudonymous analytics and subscription-related records may also be processed by Mixpanel and RevenueCat, and you may contact us to exercise applicable rights relating to that data.
 
 You have the right to lodge a complaint with a data protection supervisory authority in your member state.
 
@@ -183,13 +201,13 @@ If you are a California resident, you have the following rights under the Califo
 - **Right to opt out** of the sale of your personal information.
 - **Right to non-discrimination** for exercising your privacy rights.
 
-**We do not sell your personal information.** Since all data is stored locally on your device, we do not have access to it. You can delete all data by uninstalling the App.
+**We do not sell your personal information or share it for cross-context behavioral advertising.** Core FlipFlow behavior data remains on-device, while limited pseudonymous analytics and subscription-related records may be processed by Mixpanel and RevenueCat. You can delete local App data by uninstalling the App and contact us regarding third-party records we control.
 
 ---
 
 ## 10. International Data Transfers
 
-Since all user data is stored and processed locally on your device, no international data transfers of user data occur through the App. RevenueCat may process anonymous subscription identifiers on servers located in the United States; this processing is governed by RevenueCat's Privacy Policy and applicable data transfer frameworks. Subscription payment data is handled by Apple under Apple's own data transfer policies and applicable legal frameworks.
+Core FlipFlow behavioral data remains stored and processed locally on your device. However, pseudonymous product analytics sent to Mixpanel and anonymous subscription identifiers handled by RevenueCat may be processed outside your country of residence. Mixpanel stores customer data in the United States by default unless a different regional data residency option is configured for the project, and RevenueCat may also process subscription identifiers in the United States. Subscription payment data is handled by Apple under Apple's own data transfer policies and applicable legal frameworks.
 
 ---
 
@@ -197,6 +215,7 @@ Since all user data is stored and processed locally on your device, no internati
 
 - **Camera recordings** -- Not retained. Processed in real time and discarded immediately after analysis.
 - **App preferences and statistics** -- Stored locally on your device for as long as the App is installed. Uninstalling the App removes all UserDefaults data.
+- **Mixpanel analytics events** -- Retained by Mixpanel according to our workspace retention settings and operational needs, unless deleted sooner through configuration or applicable requests.
 - **Keychain data** -- Encryption keys and HMAC keys stored in the iOS Keychain may persist after app deletion. Reinstalling and uninstalling the App will clear these items.
 - **Subscription records** -- Managed and retained by RevenueCat and Apple per their respective data retention policies.
 
@@ -210,6 +229,7 @@ We implement privacy-by-design principles, including:
 - **Keychain-stored encryption keys** using iOS hardware-backed security for sensitive data protection.
 - **ChaChaPoly encryption** (256-bit) for sensitive fields stored in UserDefaults.
 - **HMAC-based integrity verification** (SHA-256) for tamper-resistant counters.
+- **Data minimization for analytics** so Mixpanel receives limited pseudonymous product telemetry rather than camera data, raw Screen Time contents, or exact app selections.
 - **Local-only storage** with no cloud backend or remote database.
 
 Your device's built-in security features (encryption, passcode, biometric lock) provide additional protection for your locally stored data. However, no method of electronic storage is 100% secure, and we cannot guarantee absolute security.
